@@ -16,7 +16,7 @@ io.on('connection',socket=>{
 
 
     // if someone leaves the chat, let other know
-    socket.on('disconnect', message=>{
+    socket.on('disconnect', name=>{
         socket.broadcast.emit('left', users[socket.id]);
         delete users[socket.id]
     });
